@@ -81,3 +81,9 @@ lspconfig["sumneko_lua"].setup({
 		},
 	},
 })
+
+-- configure dockerfile-language-server
+lspconfig["dockerfile-language-server"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})

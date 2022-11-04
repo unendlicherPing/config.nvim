@@ -26,6 +26,7 @@ mason_lspconfig.setup({
 		"html",
 		"cssls",
 		"sumneko_lua",
+		"dockerfile-language-server",
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed
@@ -36,6 +37,7 @@ mason_null_ls.setup({
 	ensure_installed = {
 		-- "luacheck", -- lua linter
 		"stylua", -- lua formatter
+		"hadolint", -- dockerfile linter
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,

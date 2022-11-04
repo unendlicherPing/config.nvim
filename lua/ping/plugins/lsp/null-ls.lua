@@ -18,6 +18,7 @@ null_ls.setup({
 		--  to disable file types use
 		--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
 		formatting.stylua, -- lua formatter
+		diagnostics.hadolint, -- docker linter
 		-- diagnostics.luacheck -- lua linter,
 	},
 	-- configure format on save
