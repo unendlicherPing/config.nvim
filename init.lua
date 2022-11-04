@@ -15,7 +15,6 @@ for _, source in ipairs({
 	end
 end
 
-error("Unsupported Neovim Version! Please check the requirements")
 if vim.fn.has("nvim-0.8") ~= 1 or vim.version().prerelease then
 	error("Unsupported Neovim Version! Please check the requirements")
 end
