@@ -13,6 +13,11 @@ function M.setup()
         set.ruler = false
         set.laststatus = 0
         set.showcmd = false
+
+	-- enable folding
+	set.foldmethod = "expr"
+	set.foldexpr = "nvim_treesitter#foldexpr()"
+	set.foldenable = false -- Disable folding at startup.
 end
 
 return M
