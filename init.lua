@@ -1,2 +1,2 @@
-require("user.options").setup()
 require("user.lazy").setup()
+require("user.options").setup()
