@@ -21,9 +21,44 @@ function M.setup()
     set.showcmd = false
 
 	-- enable folding
+	set.foldenable = false -- Disable folding at startup.
+    set.foldlevel = 99
+    set.fillchars = "fold:\\"
+    set.foldtext = "CustomFoldText()"
 	set.foldmethod = "expr"
 	set.foldexpr = "nvim_treesitter#foldexpr()"
-	set.foldenable = false -- Disable folding at startup.
+
+    vim.cmd [[
+    function! NextNonBlankLine(lnum)
+        let numlines = line('$')
+        let current = a:lnum + 1
+        while current <= numlines
+            if getline(current) =~? '\v\S'
+                return current
+            endif
+            let current += 1
+        endwhile
+        return -2
+    endfunction
+
+    function! CustomFoldText()
+        " get first non-blank line
+        let fs = v:foldstart
+        while getline(fs) =~ '^\s*$' | let fs = nextnonblank(fs + 1)
+        endwhile
+        if fs > v:foldend
+            let line = getline(v:foldstart)
+        else
+            let line = substitute(getline(fs), '\t', repeat(' ', &tabstop), 'g')
+        endif
+        let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
+        let foldSize = 1 + v:foldend - v:foldstart
+        let foldSizeStr = " " . foldSize . " lines "
+        let foldLevelStr = repeat("+--", v:foldlevel)
+        let expansionString = repeat(" ", w - strwidth(foldSizeStr.line.foldLevelStr))
+        return line . expansionString . foldSizeStr . foldLevelStr
+    endfunction
+    ]]
 end
 
 return M
