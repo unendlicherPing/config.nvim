@@ -11,8 +11,10 @@ M.dependencies = {
 M.config = {
 	options = {
 		theme = "tokyonight",
+        component_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
 		disabled_filetypes = {
-			statusline = { "NvimTree" },
+			statusline = { "NvimTree", "mind" },
 		},
 	},
 
@@ -25,7 +27,7 @@ M.config = {
 		lualine_c = { "filename" },
 		lualine_x = { "filetype" },
 		lualine_y = { { "tabs", mode = 1 } },
-		lualine_z = { "location" }
+        lualine_z = { "location" },
 	},
 }
 
