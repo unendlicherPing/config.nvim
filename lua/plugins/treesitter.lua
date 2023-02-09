@@ -17,6 +17,16 @@ function M.config()
 			"rust",
 			"toml",
 
+            -- markdown
+            "markdown",
+            "markdown_inline",
+
+            -- shell
+            "bash",
+
+            -- util
+            "regex",
+
 			-- vim internal
 			"lua",
 			"vim",
