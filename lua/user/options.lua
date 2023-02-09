@@ -8,6 +8,12 @@ function M.setup()
 	set.number = true
 	set.relativenumber = true
 
+	-- set tab size
+	set.tabstop = 4
+	set.shiftwidth = 4
+	set.expandtab = true
+    set.autoindent = true
+
 	-- remove statusline
 	set.showmode = false
         set.ruler = false
