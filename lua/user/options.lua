@@ -16,9 +16,9 @@ function M.setup()
 
 	-- remove statusline
 	set.showmode = false
-        set.ruler = false
-        set.laststatus = 0
-        set.showcmd = false
+    set.ruler = false
+    set.laststatus = 0
+    set.showcmd = false
 
 	-- enable folding
 	set.foldmethod = "expr"
