@@ -35,6 +35,8 @@ function M.config()
     require("mason").setup()
     require("mason-lspconfig").setup({ automatic_installation = true })
 
+    -- TODO: fix this vim.cmd.MasonInstall("commitlint")
+
     local runtime_path = vim.split(package.path, ";")
     table.insert(runtime_path, "lua/?.lua")
     table.insert(runtime_path, "lua/?/?.lua")
@@ -45,16 +47,16 @@ function M.config()
         return {
             lsp_flags = lsp_flags,
             on_attach = on_attach,
-            settings = settings,
+            settings = settings or {},
         }
     end
 
-    nvim_lsp.clangd.setup(make_opts({}))
+    nvim_lsp.clangd.setup(make_opts())
     -- nvim_lsp.ccls.setup(make_opts({})) removed because mason does not support ccls
-    nvim_lsp.cmake.setup(make_opts({}))
-    nvim_lsp.dockerls.setup(make_opts({}))
-    nvim_lsp.vimls.setup(make_opts({}))
-    nvim_lsp.marksman.setup(make_opts({}))
+    nvim_lsp.neocmake.setup(make_opts())
+    nvim_lsp.dockerls.setup(make_opts())
+    nvim_lsp.vimls.setup(make_opts())
+    nvim_lsp.marksman.setup(make_opts())
     nvim_lsp.rust_analyzer.setup(make_opts({
         ["rust-analyzer"] = {
             cargo = { allFeatures = true },
