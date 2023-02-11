@@ -11,20 +11,7 @@ local opts = {
 	checker = {
 		enabled = true,
 	},
-	rtp = {
-		disabled_plugins = {
-			"gzip",
-			"matchit",
-			"matchparen",
-			"netrwPlugin",
-			"tarPlugin",
-			"tohtml",
-			"tutor",
-			"zipPlugin",
-		},
-	},
 }
-
 
 function M.setup()
 	if not vim.loop.fs_stat(lazypath) then
