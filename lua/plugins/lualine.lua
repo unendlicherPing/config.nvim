@@ -10,7 +10,7 @@ M.dependencies = {
 
 M.config = {
 	options = {
-		theme = "tokyonight",
+		theme = "nord",
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
 		disabled_filetypes = {
