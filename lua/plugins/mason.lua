@@ -50,6 +50,8 @@ function M.config()
     end
 
     nvim_lsp.clangd.setup(make_opts({}))
+    -- nvim_lsp.ccls.setup(make_opts({})) removed because mason does not support ccls
+    nvim_lsp.cmake.setup(make_opts({}))
     nvim_lsp.dockerls.setup(make_opts({}))
     nvim_lsp.vimls.setup(make_opts({}))
     nvim_lsp.marksman.setup(make_opts({}))
